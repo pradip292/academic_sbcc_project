@@ -282,39 +282,41 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
-                    href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Analytics </span><i
-                        class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="components-alerts.html">
-                            <i class="bi bi-circle"></i><span>Alerts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-accordion.html">
-                            <i class="bi bi-circle"></i><span>Accordion</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-badges.html">
-                            <i class="bi bi-circle"></i><span>Badges</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-breadcrumbs.html">
-                            <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-                        </a>
-                    </li>
-                    
-                    
-                </ul>
-            </li><!-- End Components Nav -->
+            @can('dashboard')
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
+                        href="#">
+                        <i class="bi bi-menu-button-wide"></i><span>Analytics </span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="components-alerts.html">
+                                <i class="bi bi-circle"></i><span>Alerts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="components-accordion.html">
+                                <i class="bi bi-circle"></i><span>Accordion</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="components-badges.html">
+                                <i class="bi bi-circle"></i><span>Badges</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="components-breadcrumbs.html">
+                                <i class="bi bi-circle"></i><span>Breadcrumbs</span>
+                            </a>
+                        </li>
 
-            
+
+                    </ul>
+                </li><!-- End Components Nav -->
+            @endcan
+
+
 
         </ul>
 
@@ -332,14 +334,15 @@
         <section class="section dashboard">
             @yield('content');
 
-          
+
         </section>
     </main><!-- End #main -->
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>Sanjivani College of Engineering Kopargaon</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>Sanjivani College of Engineering Kopargaon</span></strong>. All Rights
+            Reserved
         </div>
-       
+
     </footer><!-- End Footer -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>

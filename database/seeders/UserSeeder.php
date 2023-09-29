@@ -20,6 +20,13 @@ class UserSeeder extends Seeder
             'password' => Hash::make('123456'),
             'is_approved' => 1,
         ]);
+        DB::table('users')->insert([
+            
+            'name' => 'Admin',
+            'email' => 'admin2@gmail.com',
+            'password' => Hash::make('123456'),
+            'is_approved' => 1,
+        ]);
 
        
     }
