@@ -13,7 +13,7 @@
         <div class="txt_field">
           <input type="text" name="email" required>
           <span></span>
-          <label>Username</label>
+          <label>Username or</label>
         </div>
         <div class="txt_field">
           <input type="password" name="password" required>
