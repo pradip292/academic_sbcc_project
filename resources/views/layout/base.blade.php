@@ -31,13 +31,6 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -315,6 +308,33 @@
                     </ul>
                 </li><!-- End Components Nav -->
             @endcan
+            @can('view_question')
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
+                    href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>Questions</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    @can('upload_question' && 'add_queston')
+                    <li>
+                        <a href="/add-question">
+                            <i class="bi bi-circle"></i><span>Add Questions </span>
+                        </a>
+                    </li>
+                    @endcan
+                   
+                    <li>
+                        <a href="/view-question">
+                            <i class="bi bi-circle"></i><span>View Question</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </li><!-- End Components Nav -->
+            @endcan
+                
+           
 
 
 
@@ -358,7 +378,7 @@
     <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
 
     <!-- Template Main JS File -->
-    <script src="{{ asset('assets/js/main.js') }}{{ asset('"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
 
