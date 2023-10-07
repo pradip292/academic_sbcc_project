@@ -30,10 +30,60 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <style>
+        /* Page Loader Styles */
+       /* Page Loader Styles */
+#page-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* White background to make sure it's visible */
+    z-index: 9999;
+}
 
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 6px solid #3498db; /* Blue border for the spinner */
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+    </style>
 </head>
 
 <body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="spinner"></div>
+    </div>
+    <!-- End Page Loader -->
+
+   <!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- JavaScript/jQuery to hide the loader after the page has loaded -->
+<script>
+    $(window).on('load', function () {
+        // Hide the page loader when the page is fully loaded
+        $('#page-loader').fadeOut('slow');
+    });
+</script>
+
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -83,13 +133,13 @@
                                 <span>My Profile</span>
                             </a>
                         </li>
-                        
-                        
+
+
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
-                        
+
 
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="/logout">
@@ -119,8 +169,7 @@
 
             @can('dashboard')
                 <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
-                        href="#">
+                    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                         <i class="bi bi-menu-button-wide"></i><span>Analytics </span><i
                             class="bi bi-chevron-down ms-auto"></i>
                     </a>
@@ -151,29 +200,28 @@
                 </li><!-- End Components Nav -->
             @endcan
             @can('view_question')
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse"
-                    href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Questions</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    @can('upload_question')
-                    <li>
-                        <a href="/add-question">
-                            <i class="bi bi-circle"></i><span>Add Questions </span>
-                        </a>
-                    </li>
-                    @endcan
-                   
-                    <li>
-                        <a href="/view-question">
-                            <i class="bi bi-circle"></i><span>View Question</span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </li><!-- End Components Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-menu-button-wide"></i><span>Questions</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        @can('upload_question')
+                            <li>
+                                <a href="/add-question">
+                                    <i class="bi bi-circle"></i><span>Add Questions </span>
+                                </a>
+                            </li>
+                        @endcan
+
+                        <li>
+                            <a href="/view-theory-question">
+                                <i class="bi bi-circle"></i><span>View Question</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li><!-- End Components Nav -->
             @endcan
         </ul>
 
@@ -189,7 +237,7 @@
             </nav>
         </div><!-- End Page Title -->
         <section class="section dashboard">
-            @yield('content');
+            @yield('content')
 
 
         </section>
