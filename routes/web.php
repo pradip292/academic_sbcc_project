@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\QuestionController;
 
 
 
@@ -21,4 +22,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('logout', [AuthController::class, 'logout']);
 
     Route::get('home', [AuthController::class, 'home'])->name('home');
+
+    Route::get('add-question', [QuestionController::class,'AddQuestion'])->name('question');
+
+    Route::post('upload-questions', [QuestionController::class,'UploadQuestion'])->name('upload-question');
+    
 });
