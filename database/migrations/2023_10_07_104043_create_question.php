@@ -8,6 +8,7 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * @return void
      */
     public function up(): void
     {
@@ -23,13 +24,15 @@ return new class extends Migration
             $table->string('qoption7')->nullable();
             $table->integer('type');
             $table->timestamps();
+           
         });
     }
 
     /**
      * Reverse the migrations.
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('question');
     }

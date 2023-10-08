@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\QuestionController;
@@ -23,7 +24,19 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('home', [AuthController::class, 'home'])->name('home');
 
-   // Question Handing Route
+    //Roles And Permissions
+
+    Route::get('view-role', [PermissionController::class,'rolePermissions'])->name('roles-permissions');
+
+    Route::get('edit-role/{id}', [PermissionController::class,'editRole']);
+
+    Route::post('edit-role-update/{id}', [PermissionController::class,'processEditRole']);
+
+    Route::get('add-role', [PermissionController::class,'addRole']);
+
+    Route::post('add-role', [PermissionController::class,'processAddRole'])->name('add-role');
+
+    // Question Handing Route
 
     Route::get('add-question', [QuestionController::class,'AddQuestion'])->name('question');
 

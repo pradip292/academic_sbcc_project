@@ -32,37 +32,39 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <style>
         /* Page Loader Styles */
-       /* Page Loader Styles */
-#page-loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff; /* White background to make sure it's visible */
-    z-index: 9999;
-}
+        /* Page Loader Styles */
+        #page-loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            /* White background to make sure it's visible */
+            z-index: 9999;
+        }
 
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 6px solid #3498db; /* Blue border for the spinner */
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 6px solid #3498db;
+            /* Blue border for the spinner */
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -73,16 +75,16 @@
     </div>
     <!-- End Page Loader -->
 
-   <!-- Include jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- JavaScript/jQuery to hide the loader after the page has loaded -->
-<script>
-    $(window).on('load', function () {
-        // Hide the page loader when the page is fully loaded
-        $('#page-loader').fadeOut('slow');
-    });
-</script>
+    <!-- JavaScript/jQuery to hide the loader after the page has loaded -->
+    <script>
+        $(window).on('load', function() {
+            // Hide the page loader when the page is fully loaded
+            $('#page-loader').fadeOut('slow');
+        });
+    </script>
 
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
@@ -161,48 +163,41 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link " href="#">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
-            </li><!-- End Dashboard Nav -->
+            </li>
 
-            @can('dashboard')
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                        <i class="bi bi-menu-button-wide"></i><span>Analytics </span><i
-                            class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                    <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                        <li>
-                            <a href="components-alerts.html">
-                                <i class="bi bi-circle"></i><span>Alerts</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-accordion.html">
-                                <i class="bi bi-circle"></i><span>Accordion</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-badges.html">
-                                <i class="bi bi-circle"></i><span>Badges</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="components-breadcrumbs.html">
-                                <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-                            </a>
-                        </li>
+            @can('view_roles_menu')
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#role-submenu" data-bs-toggle="collapse" href="#">
+                    <i class="ri-account-circle-fill"></i><span>Roles and Permission </span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="role-submenu" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    
+                    <li>
+                        <a href="/view-role">
+                            <i class="bi bi-circle"></i><span>View Role</span>
+                        </a>
+                    </li>
+                    @can('add_roles')
+                    <li>
+                        <a href="/add-role">
+                            <i class="bi bi-circle"></i><span>Add Role</span>
+                        </a>
+                    </li>
+                    @endcan
+                    
 
-
-                    </ul>
-                </li><!-- End Components Nav -->
+                </ul>
+            </li>
             @endcan
             @can('view_question')
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                        <i class="bi bi-menu-button-wide"></i><span>Questions</span><i
+                        <i class="bx bxl-quora"></i><span>Questions</span><i
                             class="bi bi-chevron-down ms-auto"></i>
                     </a>
                     <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -221,7 +216,7 @@
                         </li>
 
                     </ul>
-                </li><!-- End Components Nav -->
+                </li>
             @endcan
         </ul>
 
@@ -238,11 +233,9 @@
         </div><!-- End Page Title -->
         <section class="section dashboard">
             @yield('content')
-
-
         </section>
     </main><!-- End #main -->
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" >
         <div class="copyright">
             &copy; Copyright <strong><span>Sanjivani College of Engineering Kopargaon</span></strong>. All Rights
             Reserved
