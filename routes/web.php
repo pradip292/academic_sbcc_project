@@ -4,7 +4,7 @@ use App\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\QuestionController;
-
+use App\Http\Controllers\DepartmentController;
 
 
 
@@ -47,5 +47,42 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('view-theory-question', [QuestionController::class,'ViewQuestionTheory'])->name('view-theory-question');
 
     Route::get('view-practical-question', [QuestionController::class,'ViewQuestionPractical'])->name('view-practical-question');
+   
+    Route::get('add-department', [DepartmentController::class,'create'])->name('add-department');
+
+    Route::post('add-department', [DepartmentController::class,'store'])->name('add-department');
+
+    Route::get('view-department', [DepartmentController::class,'index'])->name('view-department');
+
+    // Route::get('departments.edit', [DepartmentController::class,'edit'])->name('departments.edit');
+
+    // Route::put('departments.update', [DepartmentController::class,'update'])->name('departments.update');
+
+    // Route::delete('departments.destroy', [DepartmentController::class,'destroy'])->name('departments.destroy');
+
+
+
+    Route::get('departments/{department}.edit', [DepartmentController::class,'edit'])->name('departments.edit');
+
+    Route::put('departments/{department}.update', [DepartmentController::class,'update'])->name('departments.update');
+
+    Route::delete('departments/{department}.destroy', [DepartmentController::class,'destroy'])->name('departments.destroy');
+
+
+
+
+
+
+
+    // routes/web.php
+// Route::get('/departments/{department}/edit', 'DepartmentController@edit')->name('departments.edit');
+// Route::put('/departments/{department}', 'DepartmentController@update')->name('departments.update');
+// Route::delete('/departments/{department}', 'DepartmentController@destroy')->name('departments.destroy');
+
+
+
+   
+
+
 
 });

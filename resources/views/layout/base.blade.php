@@ -196,28 +196,48 @@
             @endcan
             @can('view_question')
                 <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                        <i class="bx bxl-quora"></i><span>Questions</span><i
-                            class="bi bi-chevron-down ms-auto"></i>
+                    <a class="nav-link collapsed" data-bs-target="#questions-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bx bxl-quora"></i><span>Questions</span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
-                    <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <ul id="questions-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                         @can('upload_question')
-                            <li>
-                                <a href="/add-question">
-                                    <i class="bi bi-circle"></i><span>Add Questions </span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="/add-question">
+                                <i class="bi bi-circle"></i><span>Add Questions</span>
+                            </a>
+                        </li>
                         @endcan
-
                         <li>
                             <a href="/view-theory-question">
                                 <i class="bi bi-circle"></i><span>View Question</span>
                             </a>
                         </li>
-
                     </ul>
                 </li>
-            @endcan
+                @endcan
+
+                    @can('upload_question')
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-target="#department-nav" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-building"></i><span>Department</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="department-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                            @can('upload_question')
+                            <li>
+                                <a href="/add-department">
+                                    <i class="bi bi-circle"></i><span>Add Department</span>
+                                </a>
+                            </li>
+                            @endcan
+                            <li>
+                                <a href="/view-department">
+                                    <i class="bi bi-circle"></i><span>View Department</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    @endcan
+
         </ul>
 
     </aside><!-- End Sidebar-->
