@@ -4,7 +4,7 @@ use App\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\QuestionController;
-
+use App\Http\Controllers\StudentsController;
 
 
 
@@ -48,4 +48,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('view-practical-question', [QuestionController::class,'ViewQuestionPractical'])->name('view-practical-question');
 
+    //Students Handling Route
+
+    Route::get('add-students', [StudentsController::class,'AddStudents'])->name('students');
+
+    Route::post('upload-students', [StudentsController::class,'UploadStudents'])->name('upload-students');
+
+    Route::get('view-students', [StudentsController::class,'ViewStudents'])->name('view-students');
+    
 });
