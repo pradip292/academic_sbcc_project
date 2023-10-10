@@ -9,6 +9,7 @@ use App\Http\Controllers\DepartmentController;
 
 
 
+
 Route::group(['middleware' => ['guest']], function () {
 
     //Route For Handing Guest Opration
@@ -49,19 +50,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('view-practical-question', [QuestionController::class,'ViewQuestionPractical'])->name('view-practical-question');
    
+    //department routes
+
     Route::get('add-department', [DepartmentController::class,'create'])->name('add-department');
 
     Route::post('add-department', [DepartmentController::class,'store'])->name('add-department');
 
     Route::get('view-department', [DepartmentController::class,'index'])->name('view-department');
-
-    // Route::get('departments.edit', [DepartmentController::class,'edit'])->name('departments.edit');
-
-    // Route::put('departments.update', [DepartmentController::class,'update'])->name('departments.update');
-
-    // Route::delete('departments.destroy', [DepartmentController::class,'destroy'])->name('departments.destroy');
-
-
 
     Route::get('departments/{department}.edit', [DepartmentController::class,'edit'])->name('departments.edit');
 
@@ -70,21 +65,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('departments/{department}.destroy', [DepartmentController::class,'destroy'])->name('departments.destroy');
 
 
+    // Route::get('departments.edit', [DepartmentController::class,'edit'])->name('departments.edit');
 
+    // Route::put('departments.update', [DepartmentController::class,'update'])->name('departments.update');
 
-
-
-
+    // Route::delete('departments.destroy', [DepartmentController::class,'destroy'])->name('departments.destroy
     // routes/web.php
 // Route::get('/departments/{department}/edit', 'DepartmentController@edit')->name('departments.edit');
 // Route::put('/departments/{department}', 'DepartmentController@update')->name('departments.update');
 // Route::delete('/departments/{department}', 'DepartmentController@destroy')->name('departments.destroy');
-
-
-
-   
-
-
 
     //Students Handling Route
 
