@@ -212,12 +212,36 @@
                                 <i class="bi bi-circle"></i><span>View Question</span>
                             </a>
                         </li>
+                    </ul>
+                </li>
+            @endcan
+            @can('view_students')
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#stud" data-bs-toggle="collapse" href="#">
+                        <i class="ri-account-circle-line"></i><span>Students</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="stud" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        @can('upload_students')
+                            <li>
+                                <a href="/add-students">
+                                    <i class="bi bi-circle"></i><span>Add Students </span>
+                                </a>
+                            </li>
+                        @endcan
+
+                        <li>
+                            <a href="/view-students">
+                                <i class="bi bi-circle"></i><span>View Students</span>
+                            </a>
+                        </li>
 
                     </ul>
                 </li>
-                @endcan
+            @endcan
+                
 
-                    @can('upload_question')
+                    @can('  ')
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-bs-target="#department-nav" data-bs-toggle="collapse" href="#">
                             <i class="bi bi-building"></i><span>Department</span><i class="bi bi-chevron-down ms-auto"></i>

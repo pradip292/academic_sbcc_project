@@ -4,11 +4,8 @@ use App\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\QuestionController;
-<<<<<<< HEAD
 use App\Http\Controllers\StudentsController;
-=======
 use App\Http\Controllers\DepartmentController;
->>>>>>> afb96062a7f681a65d2e4a205041dfa58fe0141c
 
 
 
