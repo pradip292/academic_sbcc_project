@@ -88,6 +88,7 @@ class PermissionSeeder extends Seeder
             Permission::firstOrCreate($item);
         }
 
+        
         $adminRole->syncPermissions(Permission::all());
         $user = User::where('email', 'admin@gmail.com')->first();
         $user->assignRole('admin');

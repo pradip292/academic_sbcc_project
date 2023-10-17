@@ -239,8 +239,7 @@
                     </ul>
                 </li>
                 @endcan
-
-                @can('upload_question')
+                 @can('upload_question')
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-bs-target="#department-nav" data-bs-toggle="collapse" href="#">
                             <i class="bi bi-building"></i><span>Department</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -262,8 +261,92 @@
                     </li>
                 @endcan
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                @can('add_class')
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-target="#class-nav" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-book"></i><span>Division</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="class-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                            @can('edit_class')
+                            <li>
+                                <a href="/add-class">
+                                    <i class="bi bi-circle"></i><span>Add Division</span>
+                                </a>
+                            </li>
+                            @endcan
+                            <li>
+                                <a href="/view-class">
+                                    <i class="bi bi-circle"></i><span>View Division</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+               
+
         
                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         </ul>

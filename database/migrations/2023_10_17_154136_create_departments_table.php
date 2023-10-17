@@ -9,19 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('departments', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // This creates an auto-incrementing primary key column 'id'.
+            $table->string('dept_name')->unique(); // 'dept_name' is also marked as unique.
             $table->timestamps();
-            $table->string('dept_name');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('departments');
     }
