@@ -9,14 +9,10 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('years', function (Blueprint $table) {
-            $table->year('Year')->primary();
-            $table->string('FY')->nullable();
-            $table->string('SY')->nullable();
-            $table->string('TY')->nullable();
-            $table->string('Btech')->nullable();
+            $table->string('Year',100)->primary();
             $table->timestamps();
         });
     }
