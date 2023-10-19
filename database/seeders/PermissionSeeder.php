@@ -88,6 +88,16 @@ class PermissionSeeder extends Seeder
             Permission::firstOrCreate($item);
         }
 
+        $teachersPermission = [
+            ['name' => 'add_teachers'],
+            ['name' => 'view_teachers'],
+            ['name' => 'delete_teachers'],
+            
+        ];
+        foreach ($teachersPermission as $item) {
+            Permission::firstOrCreate($item);
+        }
+
         
         $adminRole->syncPermissions(Permission::all());
         $user = User::where('email', 'admin@gmail.com')->first();

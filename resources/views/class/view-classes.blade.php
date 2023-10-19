@@ -15,7 +15,7 @@
             @foreach($classes as $class)
                 <tr>
                     <td>{{ $class->division }}</td>
-                    <td>{{ $class->year }}</td>
+                    <td>{{ $class->Year }}</td>
                     <td>{{ $class->dept_name }}</td>
                 </tr>
             @endforeach

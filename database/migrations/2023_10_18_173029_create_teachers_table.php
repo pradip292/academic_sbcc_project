@@ -4,32 +4,26 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateTeachersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
-        Schema::create('classes', function (Blueprint $table) {
+        Schema::create('teachers', function (Blueprint $table) {
             $table->id(); // Auto-incrementing primary key
-            $table->string('division')->unique();
+            $table->string('teacher');
             $table->string('Year'); // String to reference Year from the "years" table
             $table->string('dept_name'); // String to reference dept_name from the "departments" table
-        
+            $table->string('division');
             // Define foreign keys
             $table->foreign('Year')->references('Year')->on('years');
             $table->foreign('dept_name')->references('dept_name')->on('departments');
-        
+            $table->foreign('division')->references('division')->on('classes');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('classes');
+        Schema::dropIfExists('teachers');
     }
-};
+}

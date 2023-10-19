@@ -7,6 +7,8 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ClassController;
+use App\Http\Controllers\TeachersController;
+
 
 
 
@@ -50,7 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('view-practical-question', [QuestionController::class,'ViewQuestionPractical'])->name('view-practical-question');
    
-    //department routes
+    //add department routes
 
     Route::get('add-department', [DepartmentController::class,'create'])->name('add-department');
 
@@ -64,9 +66,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::delete('departments/{department}.destroy', [DepartmentController::class,'destroy'])->name('departments.destroy');
 
-
-    
-
+    // add students controller
     Route::get('add-students', [StudentsController::class,'AddStudents'])->name('students');
 
     Route::post('upload-students', [StudentsController::class,'UploadStudents'])->name('upload-students');
@@ -79,7 +79,14 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('view-class', [ClassController::class,'index'])->name('view-classes');
 
+    // teachers controller
+    Route::get('add-teacher', [TeachersController::class,'create'])->name('add-teacher');
 
+    Route::post('add-teacher', [TeachersController::class,'store'])->name('add-teacher');
 
+    Route::get('view-teacher', [TeachersController::class,'index'])->name('view-teacher');
 
+    Route::delete('teachers/{teacher}.destroy', [TeachersController::class,'destroy'])->name('teachers.destroy');
+
+ 
 });
