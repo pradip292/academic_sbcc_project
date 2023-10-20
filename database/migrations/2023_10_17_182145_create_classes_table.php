@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->id(); // Auto-incrementing primary key
-            $table->string('division')->unique();
+            $table->string('division');
             $table->string('Year'); // String to reference Year from the "years" table
             $table->string('dept_name'); // String to reference dept_name from the "departments" table
-        
+            $table->unique(['division', 'Year', 'dept_name']);
             // Define foreign keys
             $table->foreign('Year')->references('Year')->on('years');
             $table->foreign('dept_name')->references('dept_name')->on('departments');
