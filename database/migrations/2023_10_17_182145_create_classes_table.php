@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('division');
             $table->string('Year'); // String to reference Year from the "years" table
             $table->string('dept_name'); // String to reference dept_name from the "departments" table
-            $table->unique(['division', 'Year', 'dept_name']);
+            $table->boolean('deactivated')->default(1);
+
+            $table->unique(['division', 'Year', 'dept_name','deactivated']);
             // Define foreign keys
             $table->foreign('Year')->references('Year')->on('years');
             $table->foreign('dept_name')->references('dept_name')->on('departments');

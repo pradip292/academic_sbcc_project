@@ -7,7 +7,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Department; // Import the Department model at the top
-
+use App\Models\classes; // Import the Class model
+use App\Models\Teachers;
 
 class DepartmentController extends Controller
 {
@@ -33,10 +34,10 @@ class DepartmentController extends Controller
 
         public function index()
         {
-
-            $departments = Department::all(); 
+            $departments = Department::where('deactivated', 1)->get(); // Only retrieve active departments
             return view('departments.index', ['departments' => $departments]);
         }
+        
 
 
         public function edit(Department $department)
@@ -55,15 +56,26 @@ class DepartmentController extends Controller
                 return redirect()->route('view-department')->with('success', 'Department updated successfully');
             }
 
-
-        
+                
         public function destroy(Department $department)
-        {
-            //dd($department);
-            $department->delete();
-            return redirect()->route('view-department')->with('success', 'Department deleted successfully');
-        }
+                {
+                    $department->deactivated = 0; // Set "deactivated" to 0
+                    classes::where('dept_name', $department->dept_name)->update(['deactivated' => 0]);
+
+                    // Find and update related records in the Teacher table
+                    Teachers::where('dept_name', $department->dept_name)->update(['deactivated' => 0]);
+                
+                    // Deactivate the department
+                    $department->save(); // Save the changes to the database
+                    return redirect()->route('view-department')->with('success', 'Department deactivated successfully');
+                }
+              
+                
+
+
+            }
+            
+            
 
 
 
-}

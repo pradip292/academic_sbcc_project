@@ -79,6 +79,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('view-class', [ClassController::class,'index'])->name('view-classes');
 
+    Route::patch('classes/deactivate/{class}', [ClassController::class,'deactivate'])->name('classes.deactivate');
+
+
     // teachers controller
     Route::get('add-teacher', [TeachersController::class,'create'])->name('add-teacher');
 
@@ -87,6 +90,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('view-teacher', [TeachersController::class,'index'])->name('view-teacher');
 
     Route::delete('teachers/{teacher}.destroy', [TeachersController::class,'destroy'])->name('teachers.destroy');
+
+    //Route::get('get-divisions', [TeachersController::class,'getDivisions'])->name('getDivisions');
+
+    Route::get('/getDivisionsAndYears', [YourController::class,'getDivisionsAndYears'])->name('getDivisionsAndYears');
+
 
  
 });

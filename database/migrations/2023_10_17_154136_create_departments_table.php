@@ -12,11 +12,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('departments', function (Blueprint $table) {
-            $table->id(); // This creates an auto-incrementing primary key column 'id'.
-            $table->string('dept_name')->unique(); // 'dept_name' is also marked as unique.
+            $table->id();
+            $table->string('dept_name');
+            $table->boolean('deactivated')->default(1);
             $table->timestamps();
+            
+            $table->unique(['dept_name', 'deactivated']); // Combined unique constraint
         });
     }
+
 
     public function down()
     {

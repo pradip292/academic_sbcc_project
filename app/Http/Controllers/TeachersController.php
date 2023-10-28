@@ -14,10 +14,10 @@ use App\Models\Teachers;
 class TeachersController extends Controller
 {
     // 
-    public function create()
+    public function create(Teachers $teacher)
     {
     $years = Year::pluck('year', 'year');
-    $departments = Department::pluck('dept_name', 'dept_name');
+    $departments = Department::where('deactivated', 1)->pluck('dept_name', 'dept_name');
     $classes = Classes::pluck('division','division');
 
     return view('teachers.create-teacher', compact( 'departments','years','classes'));
@@ -40,17 +40,26 @@ class TeachersController extends Controller
 
 
     public function index()
-   {
-    $teachers = teachers::all(); // Fetch all classes from the "teachers" table.
+    {
+        $teachers = Teachers::where('deactivated', 1)->get();
 
-    return view('teachers.view-teacher', compact('teachers'));
+        return view('teachers.view-teacher', compact('teachers'));
     }
 
+
     public function destroy(Teachers $teacher)
-        {
-            //dd($department);
-            $teacher->delete();
-            return redirect()->route('view-teacher')->with('success', 'Teacher deleted successfully');
-        }
+    {
+       // $teacher->update(['deactivated' => 0]);
+        $teacher->deactivated = 0;
+        $teacher->save();
+        return redirect()->route('view-teacher')->with('success', 'Teacher deactivated successfully');
+    }
+    
+
+
+
+   
+
+
 //
 }

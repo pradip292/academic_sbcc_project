@@ -13,6 +13,8 @@ class CreateTeachersTable extends Migration
             $table->string('teacher');
             $table->string('Year'); // String to reference Year from the "years" table
             $table->string('dept_name'); // String to reference dept_name from the "departments" table
+            $table->boolean('deactivated')->default(1);
+
             $table->string('division');
             // Define foreign keys
             $table->foreign('Year')->references('Year')->on('years');

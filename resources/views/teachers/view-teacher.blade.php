@@ -15,6 +15,7 @@
         </thead>
         <tbody>
             @foreach($teachers as $teacher)
+            @if ($teacher->deactivated == 1)
                 <tr>
                     <td>{{ $teacher->dept_name }}</td>
                     <td>{{ $teacher->Year }}</td>
@@ -27,6 +28,7 @@
                     </form>
                     </td>
                 </tr>
+                @endif
             @endforeach
         </tbody>
     </table>

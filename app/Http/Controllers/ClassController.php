@@ -15,11 +15,12 @@ class ClassController extends Controller
     //
     public function create()
     {
-    $years = Year::pluck('year', 'year');
-    $departments = Department::pluck('dept_name', 'dept_name');
-
-    return view('class.create-class', compact('years', 'departments'));
+        $years = Year::pluck('year', 'year');
+        $departments = Department::where('deactivated', 1)->pluck('dept_name', 'dept_name');
+        
+        return view('class.create-class', compact('years', 'departments'));
     }
+    
     public function store(Request $request)
     {
     // Validate the form data
@@ -39,6 +40,15 @@ class ClassController extends Controller
     $classes = classes::all(); // Fetch all classes from the "classes" table.
 
     return view('class.view-classes', compact('classes'));
+    }
+
+    public function deactivate(classes $class)
+    {
+        //$class->update(['deactivated' => 0]);
+        $class->deactivated = 0;
+        $class->save();
+
+        return redirect()->route('view-classes')->with('success', 'Class deactivated successfully');
     }
 
 
