@@ -21,18 +21,42 @@ class ClassController extends Controller
         return view('class.create-class', compact('years', 'departments'));
     }
     
+    
     public function store(Request $request)
     {
-    // Validate the form data
-    $validatedData = $request->validate([
-        'division' => 'required|string|max:255',
-        'year' => 'required|exists:years,year', // Check if the selected year exists in the "years" table.
-        'dept_name' => 'required|exists:departments,dept_name', // Check if the selected department exists in the "departments" table.
-    ]);
-    classes::create($validatedData);
-    return redirect()->route('add-class')->with('success', 'Class created successfully');
-   // return redirect('/create-class')->with('success', 'Class created successfully.');
+        // Validate the form data
+        $validatedData = $request->validate([
+            'division' => 'required|string|max:255',
+            'year' => 'required|exists:years,year',
+            'dept_name' => 'required|exists:departments,dept_name',
+           
+        ]);
+
+        // Check if the record with the same attributes was previously deleted
+        $existingRecord = classes::where([
+            'division' => $validatedData['division'],
+            'year' => $validatedData['year'],
+            'dept_name' => $validatedData['dept_name'],
+           // 'deactivated' => 0, // Assuming 1 represents a deactivated record
+        ])->first();
+
+        if ($existingRecord){
+        if ($existingRecord->deactivated === 0) {
+            // If a deactivated record exists, and 'deactivated' is not NULL, update it by setting 'deactivated' to 1
+            $existingRecord->deactivated = 1;
+            $existingRecord->save();
+        }
+        }
+        
+        else {
+            // If no deactivated record exists, create a new one
+            classes::create($validatedData);
+        }
+       
+
+        return redirect()->route('add-class')->with('success', 'Class created or reactivated successfully');
     }
+
 
 
     public function index()

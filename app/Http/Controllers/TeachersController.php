@@ -33,10 +33,29 @@ class TeachersController extends Controller
         'year' => 'required|exists:years,year', // Check if the selected year exists in the "years" table.
         'dept_name' => 'required|exists:departments,dept_name', // Check if the selected department exists in the "departments" table.
     ]);
-    Teachers::create($validatedData);
-    return redirect()->route('add-teacher')->with('success', 'Teacher inserted successfully');
-   // return redirect('/create-class')->with('success', 'Class created successfully.');
+    $existingTeacher = Teachers::where([
+    'teacher' => $validatedData['teacher'],
+    'division'=> $validatedData['division'],
+    'year' => $validatedData['year'],
+    'dept_name' => $validatedData['dept_name']
+
+    ])->first();
+    
+
+    if ($existingTeacher) {
+        if ($existingTeacher->deactivated === 0)
+        {
+        $existingTeacher->deactivated = 1;
+        $existingTeacher->save();
+    } 
     }
+    else {
+        // If the teacher doesn't exist, create a new record
+        Teachers::create($validatedData);
+    }
+
+    return redirect()->route('add-teacher')->with('success', 'Teacher inserted successfully');
+}
 
 
     public function index()

@@ -16,6 +16,8 @@ class CreateTeachersTable extends Migration
             $table->boolean('deactivated')->default(1);
 
             $table->string('division');
+            $table->unique(['teacher', 'Year', 'dept_name','division']);
+
             // Define foreign keys
             $table->foreign('Year')->references('Year')->on('years');
             $table->foreign('dept_name')->references('dept_name')->on('departments');

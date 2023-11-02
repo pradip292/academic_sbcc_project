@@ -21,15 +21,27 @@ class DepartmentController extends Controller
         
 
         public function store(Request $request)
-        {
-            
-            $validatedData = $request->validate([
-                'dept_name' => 'required|max:255',
-            ]);
+            {
+                $validatedData = $request->validate([
+                    'dept_name' => 'required|max:255',
+                ]);
 
-            Department::create($validatedData);
-            return redirect()->route('add-department')->with('success', 'Department added successfully');
-        }
+                $existingDepartment = Department::where('dept_name', $validatedData['dept_name'])->first();
+
+                if ($existingDepartment) {
+                    // If the department already exists and is deactivated, set "deactivated" to 1.
+                    if ($existingDepartment->deactivated == 0) {
+                        $existingDepartment->deactivated = 1;
+                        $existingDepartment->save();
+                    }
+                } else {
+                    // Create a new department if it doesn't exist.
+                    Department::create($validatedData);
+                }
+
+                return redirect()->route('add-department')->with('success', 'Department added successfully');
+            }
+
 
 
         public function index()
@@ -59,6 +71,7 @@ class DepartmentController extends Controller
                 
         public function destroy(Department $department)
                 {
+                    
                     $department->deactivated = 0; // Set "deactivated" to 0
                     classes::where('dept_name', $department->dept_name)->update(['deactivated' => 0]);
 
@@ -67,6 +80,7 @@ class DepartmentController extends Controller
                 
                     // Deactivate the department
                     $department->save(); // Save the changes to the database
+                
                     return redirect()->route('view-department')->with('success', 'Department deactivated successfully');
                 }
               

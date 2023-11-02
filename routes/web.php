@@ -64,7 +64,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::put('departments/{department}.update', [DepartmentController::class,'update'])->name('departments.update');
 
-    Route::delete('departments/{department}.destroy', [DepartmentController::class,'destroy'])->name('departments.destroy');
+    Route::delete('departments/{department}', [DepartmentController::class, 'destroy'])->name('departments.destroy');
+    // routes/web.php
+    //Route::delete('/departments/{department}', 'DepartmentController@destroy')->name('departments.destroy');
+
 
     // add students controller
     Route::get('add-students', [StudentsController::class,'AddStudents'])->name('students');
