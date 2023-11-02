@@ -1,15 +1,25 @@
 @extends('layout.base')
+
 @section('content')
 <div class="container">
-    <h2>Teachers</h1>
+    <h2>Teachers</h2>
+
+    <div class="d-flex justify-content-end mb-3">
+        <form action="{{ route('teachers.search') }}" method="GET">
+            <div class="input-group">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
     <table class="table">
         <thead>
             <tr>
-            <th>Department</th>
-            <th>Year</th>
+                <th>Department</th>
+                <th>Year</th>
                 <th>Division</th>
-                
                 <th>Teacher Name</th>
             </tr>
         </thead>
@@ -22,9 +32,9 @@
                     <td>{{ $teacher->division }}</td>
                     <td>{{ $teacher->teacher }}
                     <form action="{{ route('teachers.destroy', $teacher->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
                     </form>
                     </td>
                 </tr>

@@ -94,9 +94,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::delete('teachers/{teacher}.destroy', [TeachersController::class,'destroy'])->name('teachers.destroy');
 
-    //Route::get('get-divisions', [TeachersController::class,'getDivisions'])->name('getDivisions');
+    // Route::get('get-divisions', [TeachersController::class,'getDivisions'])->name('getDivisions');
 
-    Route::get('/getDivisionsAndYears', [YourController::class,'getDivisionsAndYears'])->name('getDivisionsAndYears');
+    // Route::get('/getDivisionsAndYears', [YourController::class,'getDivisionsAndYears'])->name('getDivisionsAndYears');
+
+    Route::get('teachers/search', [TeacherSController::class, 'search'])->name('teachers.search');
+
 
 
  

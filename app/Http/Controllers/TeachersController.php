@@ -73,6 +73,19 @@ class TeachersController extends Controller
         $teacher->save();
         return redirect()->route('view-teacher')->with('success', 'Teacher deactivated successfully');
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+
+        // Perform the search query
+        $teachers = Teachers::where('teacher', 'like', '%' . $search . '%')
+            ->where('deactivated', 1)
+            ->get();
+
+        return view('teachers.index', compact('teachers'));
+    }
+
     
 
 
