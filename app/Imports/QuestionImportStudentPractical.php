@@ -36,6 +36,7 @@ class QuestionImportStudentPractical implements ToCollection
                 'qoption3' => $row[3],
                 'qoption4' => $row[4],
                 'type' => $type,
+                'term' => 1,
             ]);
         }
     }
