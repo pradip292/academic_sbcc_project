@@ -70,6 +70,8 @@ class ClassController extends Controller
     {
         //$class->update(['deactivated' => 0]);
         $class->deactivated = 0;
+        Teachers::where('dept_name', $class->division)->update(['deactivated' => 0]);
+
         $class->save();
 
         return redirect()->route('view-classes')->with('success', 'Class deactivated successfully');
