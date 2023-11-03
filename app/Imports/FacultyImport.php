@@ -18,7 +18,7 @@ class FacultyImport implements ToCollection
             if ($index === 0) {
                 continue; 
             }
-            $existingfaculty = DB::table('faculty')
+            $existingfaculty = DB::table('faculties')
             ->where('fname', $row[1])
             ->where('type', 1)
             ->first();
@@ -26,7 +26,7 @@ class FacultyImport implements ToCollection
             if (!is_null($existingfaculty)) {
                 continue; 
             }
-            faculty::create([
+            faculties::create([
                 'fname' => $row[0],
                 'fdepart'=> $row[1],
                 'fmail'=> $row[2],
