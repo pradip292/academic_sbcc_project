@@ -98,6 +98,17 @@ class PermissionSeeder extends Seeder
             Permission::firstOrCreate($item);
         }
 
+        $FacultyPermission = [
+            ['name' => 'upload_faculty'],
+            ['name' => 'view_faculty'],
+            ['name' => 'delete_faculty'],
+            
+        ];
+        foreach ($FacultyPermission as $item) {
+            Permission::firstOrCreate($item);
+        }
+        
+
         
         $adminRole->syncPermissions(Permission::all());
         $user = User::where('email', 'admin@gmail.com')->first();

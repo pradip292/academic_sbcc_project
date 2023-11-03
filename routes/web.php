@@ -8,6 +8,7 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\TeachersController;
+use App\Http\Controllers\FacultyController;
 
 
 
@@ -100,7 +101,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('teachers/search', [TeacherSController::class, 'search'])->name('teachers.search');
 
+    
+    // add students controller
+    Route::get('add-faculty', [FacultyController::class,'AddFaculty'])->name('faculty');
 
+    Route::post('upload-faculty', [FacultyController::class,'UploadFaculty'])->name('upload-faculty');
+
+    Route::get('view-faculty', [FacultyController::class,'ViewFaculty'])->name('view-faculty');
 
  
 });

@@ -304,7 +304,29 @@
                     </li>
                 @endcan
         
-                
+                @can('view_faculty')
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#fac-nav" data-bs-toggle="collapse" href="#">
+                        <i class="ri-account-circle-line"></i><span>Faculties</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="fac-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        @can('upload_faculty')
+                            <li>
+                                <a href="/add-faculty">
+                                    <i class="bi bi-circle"></i><span>Upload Faculty</span>
+                                </a>
+                            </li>   
+                        @endcan
+                        <li>
+                            <a href="/view-faculty">
+                                <i class="bi bi-circle"></i><span>View Faculty</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                @endcan
 
 
 
