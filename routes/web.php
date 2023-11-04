@@ -4,6 +4,11 @@ use App\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\ClassController;
+use App\Http\Controllers\TeachersController;
+use App\Http\Controllers\FacultyController;
 
 
 
@@ -47,5 +52,64 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('view-theory-question', [QuestionController::class,'ViewQuestionTheory'])->name('view-theory-question');
 
     Route::get('view-practical-question', [QuestionController::class,'ViewQuestionPractical'])->name('view-practical-question');
+   
+    //add department routes
 
+    Route::get('add-department', [DepartmentController::class,'create'])->name('add-department');
+
+    Route::post('add-department', [DepartmentController::class,'store'])->name('add-department');
+
+    Route::get('view-department', [DepartmentController::class,'index'])->name('view-department');
+
+    Route::get('departments/{department}.edit', [DepartmentController::class,'edit'])->name('departments.edit');
+
+    Route::put('departments/{department}.update', [DepartmentController::class,'update'])->name('departments.update');
+
+    Route::delete('departments/{department}', [DepartmentController::class, 'destroy'])->name('departments.destroy');
+    // routes/web.php
+    //Route::delete('/departments/{department}', 'DepartmentController@destroy')->name('departments.destroy');
+
+
+    // add students controller
+    Route::get('add-students', [StudentsController::class,'AddStudents'])->name('students');
+
+    Route::post('upload-students', [StudentsController::class,'UploadStudents'])->name('upload-students');
+
+    Route::get('view-students', [StudentsController::class,'ViewStudents'])->name('view-students');
+    
+    // class controller
+    Route::get('add-class', [ClassController::class,'create'])->name('add-class');
+    Route::post('store', [ClassController::class,'store'])->name('store');
+
+    Route::get('view-class', [ClassController::class,'index'])->name('view-classes');
+
+    Route::patch('classes/deactivate/{class}', [ClassController::class,'deactivate'])->name('classes.deactivate');
+
+
+    // teachers controller
+    Route::get('add-teacher', [TeachersController::class,'create'])->name('add-teacher');
+
+    Route::post('add-teacher', [TeachersController::class,'store'])->name('add-teacher');
+
+    Route::get('view-teacher', [TeachersController::class,'index'])->name('view-teacher');
+
+    Route::delete('teachers/{teacher}.destroy', [TeachersController::class,'destroy'])->name('teachers.destroy');
+
+    // Route::get('get-divisions', [TeachersController::class,'getDivisions'])->name('getDivisions');
+
+    // Route::get('/getDivisionsAndYears', [YourController::class,'getDivisionsAndYears'])->name('getDivisionsAndYears');
+
+    Route::get('teachers/search', [TeacherSController::class, 'search'])->name('teachers.search');
+
+    
+    // add students controller
+    Route::get('add-faculty', [FacultyController::class,'AddFaculty'])->name('faculty');
+
+    Route::post('upload-faculty', [FacultyController::class,'UploadFaculty'])->name('upload-faculty');
+
+    Route::get('view-faculty', [FacultyController::class,'ViewFaculty'])->name('view-faculty');
+   
+    Route::delete('faculty/{id}', [FacultyController::class,'deleteFaculty']);
+
+ 
 });
