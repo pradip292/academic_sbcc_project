@@ -102,6 +102,7 @@ class PermissionSeeder extends Seeder
             ['name' => 'upload_faculty'],
             ['name' => 'view_faculty'],
             ['name' => 'delete_faculty'],
+            ['name' => 'see_faculty'],
             
         ];
         foreach ($FacultyPermission as $item) {
