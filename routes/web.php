@@ -108,6 +108,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('upload-faculty', [FacultyController::class,'UploadFaculty'])->name('upload-faculty');
 
     Route::get('view-faculty', [FacultyController::class,'ViewFaculty'])->name('view-faculty');
+   
+    Route::delete('faculty/{id}', [FacultyController::class,'deleteFaculty']);
 
  
 });

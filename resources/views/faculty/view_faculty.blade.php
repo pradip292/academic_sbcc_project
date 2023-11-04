@@ -1,6 +1,8 @@
 @extends('layout.base')
 
 @section('content')
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <div class="card">
         <div class="card-body">
             <br>
@@ -17,6 +19,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Department</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Actions</th> <!-- Add a new column for actions -->
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +30,10 @@
                             <td>{{ $item->fname }}</td>
                             <td>{{ $item->fdepart }}</td>
                             <td>{{ $item->fmail }}</td>
+                            <td>
+                                        <!-- Add a delete button that triggers a JavaScript function -->
+                                <button class="btn btn-danger" onclick="deleteFaculty({{ $item->id }})">Delete</button>
+                            </td>
                         </tr>
                         @php $serialNumber++ @endphp
                     @endforeach
@@ -56,3 +63,19 @@
         });
     </script>
 @endsection
+
+<script>
+    function deleteFaculty(id) {
+        if (confirm('Are you sure you want to delete this faculty record?')) {
+            // Send an AJAX request to delete the faculty record
+            axios.delete(`/faculty/${id}`)
+                .then(function (response) {
+                    // Reload the page or update the view as needed
+                    location.reload(); // This will refresh the page
+                })
+                .catch(function (error) {
+                    console.error('Error deleting faculty record:', error);
+                });
+        }
+    }
+</script>

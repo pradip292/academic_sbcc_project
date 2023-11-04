@@ -58,4 +58,12 @@ class FacultyController extends Controller
         return view('faculty.view_faculty', compact('faculty'));
     }
 
+    public function deleteFaculty($id) {
+        // Find the faculty record by ID and delete it
+        Faculty::find($id)->delete();
+        // You can return a response as needed, such as a JSON response or a redirect
+        return response()->json(['message' => 'Faculty record deleted']);
+    }
+    
+
 }
