@@ -11,8 +11,7 @@
 
     <!-- Favicons -->
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
-
+    <link href="{{ asset('assets/img/download.png') }}" rel="apple-touch-icon">
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link
@@ -116,14 +115,14 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                         data-bs-toggle="dropdown">
-                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <img src="assets/img/download.png" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Sanjivani</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
-                            <span>Web Designer</span>
+                            <h6>SCOE</h6>
+                            <span>Super Admin </span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -163,7 +162,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link collapsed" href="/home">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -196,28 +195,161 @@
             @endcan
             @can('view_question')
                 <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-                        <i class="bx bxl-quora"></i><span>Questions</span><i
-                            class="bi bi-chevron-down ms-auto"></i>
+                    <a class="nav-link collapsed" data-bs-target="#questions-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bx bxl-quora"></i><span>Questions</span><i class="bi bi-chevron-down ms-auto"></i>
                     </a>
-                    <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <ul id="questions-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                         @can('upload_question')
-                            <li>
-                                <a href="/add-question">
-                                    <i class="bi bi-circle"></i><span>Add Questions </span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="/add-question">
+                                <i class="bi bi-circle"></i><span>Add Questions</span>
+                            </a>
+                        </li>
                         @endcan
-
                         <li>
                             <a href="/view-theory-question">
                                 <i class="bi bi-circle"></i><span>View Question</span>
                             </a>
                         </li>
+                    </ul>
+                </li>
+                @endcan
+                @can('view_students')
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#stud" data-bs-toggle="collapse" href="#">
+                        <i class="ri-account-circle-line"></i><span>Students</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="stud" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        @can('upload_students')
+                            <li>
+                                <a href="/add-students">
+                                    <i class="bi bi-circle"></i><span>Add Students</span>
+                                </a>
+                            </li>
+                        @endcan
+
+                        <li>
+                            <a href="/view-students">
+                                <i class="bi bi-circle"></i><span>View Students</span>
+                            </a>
+                        </li>
 
                     </ul>
                 </li>
-            @endcan
+                @endcan
+                @can('upload_question')
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-target="#department-nav" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-building"></i><span>Department</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="department-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                            @can('upload_question')
+                            <li>
+                                <a href="/add-department">
+                                    <i class="bi bi-circle"></i><span>Add Department</span>
+                                </a>
+                            </li>
+                            @endcan
+                            <li>
+                                <a href="/view-department">
+                                    <i class="bi bi-circle"></i><span>View Department</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+
+                @can('add_class')
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-target="#class-nav" data-bs-toggle="collapse" href="#">
+                            <i class="bi bi-book"></i><span>Division</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="class-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                            @can('edit_class')
+                            <li>
+                                <a href="/add-class">
+                                    <i class="bi bi-circle"></i><span>Add Division</span>
+                                </a>
+                            </li>
+                            @endcan
+                            <li>
+                                <a href="/view-class">
+                                    <i class="bi bi-circle"></i><span>View Division</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+               
+                @can('add_teachers')
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-target="#teacher-nav" data-bs-toggle="collapse" href="#">
+                            <i class="ri-account-circle-line"></i><span>Teacher</span><i class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="teacher-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                            @can('add_teachers')
+                            <li>
+                                <a href="/add-teacher">
+                                    <i class="bi bi-circle"></i><span>Add teacher</span>
+                                </a>
+                            </li>
+                            @endcan
+                            <li>
+                                <a href="/view-teacher">
+                                    <i class="bi bi-circle"></i><span>View Teacher</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+        
+                @can('view_faculty')
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#fac-nav" data-bs-toggle="collapse" href="#">
+                        <i class="ri-account-circle-line"></i><span>Faculties</span><i
+                            class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="fac-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                        @can('upload_faculty')
+                            <li>
+                                <a href="/add-faculty">
+                                    <i class="bi bi-circle"></i><span>Upload Faculty</span>
+                                </a>
+                            </li>   
+                        @endcan
+                        <li>
+                            <a href="/view-faculty">
+                                <i class="bi bi-circle"></i><span>View Faculty</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                @endcan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </ul>
 
     </aside><!-- End Sidebar-->
