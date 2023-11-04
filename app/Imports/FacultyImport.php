@@ -26,7 +26,7 @@ class FacultyImport implements ToCollection
             if (!is_null($existingfaculty)) {
                 continue; 
             }
-            faculties::create([
+            faculty::create([
                 'fname' => $row[0],
                 'fdepart'=> $row[1],
                 'fmail'=> $row[2],
