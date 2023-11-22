@@ -34,6 +34,7 @@ class StudentsImport implements ToCollection
                 'sclass'=> $row[3],
                 'sdiv'=> $row[4],
                 'semail'=> $row[5],
+                'sdob'=>$row[6],
                 'type'    =>1,
             ]);
         }

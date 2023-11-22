@@ -15,6 +15,7 @@ class Students extends Model
         'sclass',
         'sdiv',
         'semail',
+        'sdob',
         'type',
         
     ];

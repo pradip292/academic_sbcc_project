@@ -14,6 +14,7 @@
                         <th scope="col">Class</th>
                         <th scope="col">Div </th>
                         <th scope="col">Email</th>
+                        <th scope="col">DOB</th>
 
                     </tr>
                 </thead>
@@ -28,6 +29,7 @@
                             <td>{{ $item->sclass }}</td>
                             <td>{{ $item->sdiv}}</td>
                             <td>{{ $item->semail}}</td>     
+                            <td>{{ $item->sdob}}</td> 
                         </tr>
                         @php $serialNumber++ @endphp
                     @endforeach
