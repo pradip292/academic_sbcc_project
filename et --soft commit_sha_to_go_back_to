@@ -1,0 +1,267 @@
+[33mcommit b2bba8d157bc377f8d5bf42cb56ebe52fe41fb3a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 0477a86 5b2860c
+Author: TUSHAR PATEKAR <tusharpatekar45@gmail.com>
+Date:   Sat Nov 4 10:12:43 2023 +0530
+
+    Merge pull request #7 from SBCC-Group-3-an-8/practice1
+    
+    Practice1
+
+[33mcommit 5b2860cfc7004d884b84e7c9b9c226cfc91ae8bd[m[33m ([m[1;31morigin/practice1[m[33m, [m[1;32mpractice1[m[33m)[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Sat Nov 4 10:06:09 2023 +0530
+
+    fac updated
+
+[33mcommit e67153dcf42cb0b4b2a620e97ad29359b6afeabf[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Sat Nov 4 09:19:42 2023 +0530
+
+    Teacher search
+
+[33mcommit 599b393ec384d301413ea4388fec54861c5aee4f[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Sat Nov 4 09:13:44 2023 +0530
+
+    Teacher Functionality
+
+[33mcommit 0477a869e465df13e48e357e8171d0cbe614a69b[m
+Author: tusharpatekar <tusharpatekar45@gmail.com>
+Date:   Sat Nov 4 01:10:11 2023 +0530
+
+    demo on api
+
+[33mcommit 02ba0b94f5724bcd5f3732cf3066b37238db7aee[m
+Author: tusharpatekar <tusharpatekar45@gmail.com>
+Date:   Sat Nov 4 00:47:29 2023 +0530
+
+    Two section for Add Questions
+
+[33mcommit e0102dbc02fc712d1a58163b9cfb9f5a2f86d0f0[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Sat Nov 4 00:29:38 2023 +0530
+
+    Teacher Functionality
+
+[33mcommit 57e20020332006e91e09cb0194a01895e9984d83[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Sat Nov 4 00:22:54 2023 +0530
+
+    Teacher Functionality
+
+[33mcommit fafb97a2716a3829cb25555b451c1a1d93e4967c[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Fri Nov 3 23:47:48 2023 +0530
+
+     fac
+
+[33mcommit dc5afbb099182ebc8ed3203e9ec5cf15eaf0bed4[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Fri Nov 3 21:43:16 2023 +0530
+
+    department delete issue solved
+
+[33mcommit 4e04d3b31ca17325930f87364d9ab3db272710f4[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Fri Nov 3 01:02:48 2023 +0530
+
+    Search Functionality added in Teacher Section
+
+[33mcommit ff44c72551bdb5abb54bd1d20747c7460d32ebbe[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Thu Nov 2 23:00:11 2023 +0530
+
+    Delete functionality updated
+
+[33mcommit 461cc6fe7a084fd5438d3e6caa7aa7bbe0afbd22[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Sat Oct 28 09:53:30 2023 +0530
+
+    logo changed
+
+[33mcommit dfc3c9c8596ed7652ab846f4b7d5bd8986414cf8[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Sat Oct 28 09:41:55 2023 +0530
+
+    admin name changed
+
+[33mcommit 944e78b5d1cb339c656f5bad97ea5790727e3635[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Sat Oct 28 09:07:18 2023 +0530
+
+    Deactivated Implemented in all tables
+
+[33mcommit a7457c0454d62e4068ddfa2945bbe51395ef626e[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Fri Oct 20 19:39:43 2023 +0530
+
+    I think error is solve
+
+[33mcommit b230c212c86c3057480e0d2e6990162545961480[m
+Author: tusharpatekar45 <tusharpatekar45@gmail.com>
+Date:   Thu Oct 19 22:56:37 2023 +0530
+
+    seeder issue solve
+
+[33mcommit 7c8dd15df8480d60c89181fff07939f6b7ddfdca[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Thu Oct 19 15:40:54 2023 +0530
+
+    teachers problem reamain with dublicate division
+
+[33mcommit 80a67b254c2e456f7a54444e5700bd8a828bb947[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Wed Oct 18 08:45:55 2023 +0530
+
+    create class seeder added
+
+[33mcommit 071bd00fea35e2f44cb9c10c3aa61f1a5395b1ea[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Wed Oct 18 08:29:36 2023 +0530
+
+    Value inserted in Year table
+
+[33mcommit c4f5accea201b7f025099e43abb5d1fba3b47430[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Tue Oct 17 23:54:47 2023 +0530
+
+    Division is done
+
+[33mcommit 50fb308bcbcf74e372630671ebdb88c1dd0ba237[m
+Author: atharvak143 <atharv2002sanjivaniit@gmail.com>
+Date:   Tue Oct 17 21:43:09 2023 +0530
+
+    Year Table Upgraded
+
+[33mcommit 8444c5d417cd9130cc86e28620a9dc3c3288de9d[m
+Author: atharvak143 <atharv2002sanjivaniit@gmail.com>
+Date:   Tue Oct 17 20:40:50 2023 +0530
+
+    Year Table Created
+
+[33mcommit 3694e411783fa6ccc752e3aa087200d93c72bbb0[m
+Merge: de657b3 42f3da8
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Tue Oct 10 19:09:52 2023 +0530
+
+    Departs and Student added
+
+[33mcommit de657b31e2d4979e5e04a0613b3298105fce9f47[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Tue Oct 10 18:45:39 2023 +0530
+
+    Department and Students Added
+
+[33mcommit e38e9f08d67298946295f53c03776f969ff8263e[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Tue Oct 10 12:38:54 2023 +0530
+
+     added depart
+
+[33mcommit 42f3da80534c6e9efc9c0c908554e2903856c031[m
+Merge: 82a877b afb9606
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Tue Oct 10 09:35:33 2023 +0530
+
+    departs add
+
+[33mcommit 82a877bfd6c281a64218a0bd6940c230135b98b7[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Tue Oct 10 01:59:27 2023 +0530
+
+    add student added
+
+[33mcommit afb96062a7f681a65d2e4a205041dfa58fe0141c[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Tue Oct 10 00:50:57 2023 +0530
+
+    Department Done
+
+[33mcommit 4664875a141a47095dc7729789c8c813256487b0[m
+Merge: 2df4816 15d04b7
+Author: tusharpatekar45 <tusharpatekar45@gmail.com>
+Date:   Mon Oct 9 00:31:37 2023 +0530
+
+    Merge branch 'master' of https://github.com/SBCC-Group-3-an-8/academic_sbcc_project
+
+[33mcommit 2df481663c26310fe4c9eab23edac38d6ff7d557[m
+Author: tusharpatekar45 <tusharpatekar45@gmail.com>
+Date:   Mon Oct 9 00:26:50 2023 +0530
+
+    Roles And Permission Functionality
+
+[33mcommit 15d04b73dec50796eee6356bff3d20ff02e53f44[m
+Author: pradip292 <pradipwarkhade74@gmail.com>
+Date:   Sun Oct 8 15:09:51 2023 +0530
+
+    test
+
+[33mcommit d3cc3bfaf3197ad5d7878604aea5cdd2bd016662[m
+Author: tusharpatekar45 <tusharpatekar45@gmail.com>
+Date:   Sun Oct 8 00:56:08 2023 +0530
+
+    Question Phase II Completed
+
+[33mcommit b5f19d8412488ee4b6fe3a5e06dbdf3438b1393a[m
+Author: tusharpatekar45 <tusharpatekar45@gmail.com>
+Date:   Sat Oct 7 18:45:39 2023 +0530
+
+    Uploading Student Question Phase I completed
+
+[33mcommit 5398d51723642aa111fa19dc5f7360dd1396cd27[m
+Merge: 33a93c3 91226f2
+Author: TUSHAR PATEKAR <tusharpatekar45@gmail.com>
+Date:   Sat Oct 7 15:27:15 2023 +0530
+
+    Merge pull request #4 from SBCC-Group-3-an-8/Permission
+    
+    Question Permission
+
+[33mcommit 91226f2e9af6454933fddb05ceb355e5f2c1fdda[m
+Author: tusharpatekar45 <tusharpatekar45@gmail.com>
+Date:   Sat Oct 7 15:26:14 2023 +0530
+
+    Question Permission
+
+[33mcommit 33a93c3df178747c565f772d7ebba7a4d035fb8a[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Sat Oct 7 09:22:16 2023 +0530
+
+    Revert "Merge branch 'master' of https://github.com/SBCC-Group-3-an-8/academic_sbcc_project"
+    
+    This reverts commit ae5e1f4c83d7edd187ccb4cfb34f932e1369f0b6, reversing
+    changes made to cf721627a9f077cbfae9986cb22212ef395af387.
+
+[33mcommit bf65b7dec298078358a9585366b25412cb7cd16d[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Sat Oct 7 09:10:49 2023 +0530
+
+    commit
+
+[33mcommit 6c5cd76a169c40b78f2cc21dace897fba03a88bc[m
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Sat Oct 7 09:07:37 2023 +0530
+
+    no chnanges
+
+[33mcommit ae5e1f4c83d7edd187ccb4cfb34f932e1369f0b6[m
+Merge: cf72162 d79435e
+Author: Jalindranath <jalindranathkangane38@gmail.com>
+Date:   Sat Oct 7 09:00:32 2023 +0530
+
+    Merge branch 'master' of https://github.com/SBCC-Group-3-an-8/academic_sbcc_project
+
+[33mcommit cf721627a9f077cbfae9986cb22212ef395af387[m
+Merge: f2f4d56 9706ab5
+Author: TUSHAR PATEKAR <tusharpatekar45@gmail.com>
+Date:   Fri Sep 29 16:44:54 2023 +0530
+
+    Merge pull request #2 from SBCC-Group-3-an-8/Permission
+    
+    Roles And Permission
+
+[33mcommit d79435e91463de995d36ea3965e8ae6064ed33ef[m
+Author: Pradip Warkhade <112244779+pradip292@users.noreply.github.com>
+Date:   Fri Oct 6 11:56:36 2023 +0530
+
+    nothing 
