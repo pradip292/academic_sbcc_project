@@ -304,7 +304,7 @@
                     </li>
                 @endcan
         
-                @can('view_faculty')
+                @can('see_faculty')
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#fac-nav" data-bs-toggle="collapse" href="#">
                         <i class="ri-account-circle-line"></i><span>Faculties</span><i
@@ -318,11 +318,13 @@
                                 </a>
                             </li>   
                         @endcan
+                        @can('view_faculty')
                         <li>
                             <a href="/view-faculty">
                                 <i class="bi bi-circle"></i><span>View Faculty</span>
                             </a>
                         </li>
+                        @endcan
 
                     </ul>
                 </li>

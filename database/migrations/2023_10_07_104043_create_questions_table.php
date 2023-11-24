@@ -23,7 +23,9 @@ return new class extends Migration
             $table->string('qoption6')->nullable();
             $table->string('qoption7')->nullable();
             $table->integer('type');
+
             $table->string('term');
+
             $table->timestamps();
            
         });

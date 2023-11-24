@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 use App\Models\Year;                    // Import the Year model
 use App\Models\Department;              // Import the Department model
 use App\Models\classes; 
- 
+use App\Models\Teachers; 
 class ClassController extends Controller
 {
     //
