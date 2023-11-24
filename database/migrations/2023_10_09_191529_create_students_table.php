@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('sname');
             $table->string('sprn')->nullable();
+            $table->date('sdob')->nullable();
             $table->string('sdepart')->nullable();
             $table->string('sclass')->nullable();
             $table->string('sdiv')->nullable();
