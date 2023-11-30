@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Facades\ExcelFile;
 use App\Models\Faculty;
-
+use App\Models\User;
 
 class FacultyController extends Controller
 {
@@ -33,14 +33,33 @@ class FacultyController extends Controller
                 if ($index === 0) {
                     continue;
                 }
-                Faculty::create([
+                $faculty = Faculty::create([
                     'fname' => $row[0],
                     'fdepart' => $row[1],
                     'fmail' => $row[2],
-
                 ]);
-        
+            
+                User::create([
+                    'name' => $faculty->fname,
+                    'email' => $faculty->fmail,
+                    'password' => Hash::make('123456'),
+                    'is_approved' => 1,
+                ]);
             }
+
+            
+
+            // $teachers = Faculty::all();
+
+            //     foreach ($teachers as $teacher) {
+            //         // Insert a user record for each teacher
+            //         User::create([
+            //             'name' => $teacher->fname,          // Assuming 'fname' is the field in 'faculties'
+            //             'email' => $teacher->femail,        // Assuming 'femail' is the field in 'faculties'
+            //             'password' => Hash::make('123456'), // Default password '123456'
+            //             'is_approved' => 1,                  // Assuming a default value for 'is_approved'
+            //         ]);
+            //     }
         }
         if (in_array($extension, ['xls', 'xlsx', 'csv'])) {
 

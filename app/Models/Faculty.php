@@ -13,6 +13,8 @@ class Faculty extends Model
         'fdepart',
         'fmail',
         'type',
+
+    
         
     ];
 }
