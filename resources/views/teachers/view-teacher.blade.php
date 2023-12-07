@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Teachers</h2>
+    <h2>Subjects</h2>
 
     <div class="d-flex justify-content-end mb-3">
         <form action="{{ route('teachers.search') }}" method="GET">
