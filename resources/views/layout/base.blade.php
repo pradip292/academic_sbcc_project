@@ -285,19 +285,19 @@
                 @can('add_teachers')
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-bs-target="#teacher-nav" data-bs-toggle="collapse" href="#">
-                            <i class="ri-account-circle-line"></i><span>Teacher</span><i class="bi bi-chevron-down ms-auto"></i>
+                            <i class="ri-account-circle-line"></i><span>Subjects</span><i class="bi bi-chevron-down ms-auto"></i>
                         </a>
                         <ul id="teacher-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                             @can('add_teachers')
                             <li>
                                 <a href="/add-teacher">
-                                    <i class="bi bi-circle"></i><span>Add teacher</span>
+                                    <i class="bi bi-circle"></i><span>Add Subject</span>
                                 </a>
                             </li>
                             @endcan
                             <li>
                                 <a href="/view-teacher">
-                                    <i class="bi bi-circle"></i><span>View Teacher</span>
+                                    <i class="bi bi-circle"></i><span>View Subject</span>
                                 </a>
                             </li>
                         </ul>

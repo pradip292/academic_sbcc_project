@@ -20,7 +20,8 @@
                 <th>Department</th>
                 <th>Year</th>
                 <th>Division</th>
-                <th>Teacher Name</th>
+                <th>Subject Name</th>
+                
             </tr>
         </thead>
         <tbody>

@@ -6,13 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="card-title">Add Teacher</h1>
+                    <h1 class="card-title">Add Subject</h1>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('add-teacher') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="teacher">Teacher Name</label>
+                            <label for="teacher">Subject Name</label>
                             <input type="text" name="teacher" id="teacher" class="form-control @error('teacher') is-invalid @enderror" value="{{ old('teacher') }}">
                             @error('teacher')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -47,14 +47,18 @@
                         <div class="form-group">
                             <label for="division">Division</label>
                             <select name="division" id="division" class="form-control @error('division') is-invalid @enderror">
-                                <option value="" selected disabled>Select Division</option> <!-- Add this line -->
-                                @foreach($classes as $division)
-                                    <option value="{{ $division }}">{{ $division }}</option>
-                                @endforeach
+                                <option value="" selected disabled>Select Division</option> 
+                                <!-- Add this line -->
+                                
+                           
+                                    @foreach($classes as $division)
+                                        <option value="{{ $division }}">{{ $division }}</option>
+                                    @endforeach
                             </select>
                             @error('division')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
+                            
                         </div>
                         <div class="form-group">
                             <br>
