@@ -15,7 +15,6 @@ class Question extends Model
         'qoption3',
         'qoption4',
         'type',
-        'term',
         
     ];
 }
