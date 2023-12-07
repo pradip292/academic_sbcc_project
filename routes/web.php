@@ -42,7 +42,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('add-role', [PermissionController::class,'processAddRole'])->name('add-role');
 
     // Question Handing Route
-
     Route::get('add-question', [QuestionController::class,'AddQuestion'])->name('question');
 
     Route::post('upload-questions-theory', [QuestionController::class,'UploadQuestionStudentTheory'])->name('upload-question-theory');
@@ -52,8 +51,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('view-theory-question', [QuestionController::class,'ViewQuestionTheory'])->name('view-theory-question');
 
     Route::get('view-practical-question', [QuestionController::class,'ViewQuestionPractical'])->name('view-practical-question');
-   
-    //add department routes
+    
+    //add department routes 
 
     Route::get('add-department', [DepartmentController::class,'create'])->name('add-department');
 

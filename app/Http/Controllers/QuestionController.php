@@ -20,21 +20,12 @@ class QuestionController extends Controller
     public function UploadQuestionStudentTheory(Request $request)
     {
         $file = $request->file('file');
-        $type = 2;
 
-        if ($request->input('term') == 1) {
-            $term = 1;
-
-        }
-        else
-        {
-            $term = 2;
-        }
         $extension = $file->getClientOriginalExtension();
         $validatedData = $request->validate([
             'file' => 'required|mimes:csv,xls,xlsx',
         ]);
-        if ($extension === 'csv') {
+        if ($extension === '55') {
 
             $data = array_map('str_getcsv', file($file));
 
@@ -50,12 +41,11 @@ class QuestionController extends Controller
                     'qoption2' => $row[2],
                     'qoption3' => $row[3],
                     'qoption4' => $row[4],
-                    'type' => $type,
-                    'term' => $term,
+                    'type' => 1,
                 ]);
             }
         }
-        if (in_array($extension, ['xls', 'xlsx'])) {
+        if (in_array($extension, ['xls', 'xlsx', 'csv'])) {
 
             Excel::import(new QuestionImport, $file);
             //Default Excel Class 
@@ -66,21 +56,12 @@ class QuestionController extends Controller
     public function UploadQuestionStudentPractical(Request $request)
     {
         $file = $request->file('file');
-        if ($request->input('term') == 1) {
-            $term = 1;
-
-        }
-        else
-        {
-            $term = 2;
-        }
 
         $extension = $file->getClientOriginalExtension();
-        $type = 2;
         $validatedData = $request->validate([
             'file' => 'required|mimes:csv,xls,xlsx',
         ]);
-        if ($extension === 'csv') {
+        if ($extension === '55') {
 
             $data = array_map('str_getcsv', file($file));
 
@@ -96,12 +77,11 @@ class QuestionController extends Controller
                     'qoption2' => $row[2],
                     'qoption3' => $row[3],
                     'qoption4' => $row[4],
-                    'type' => $type,
-                    'term'=> $term,
+                    'type' => 2,
                 ]);
             }
         }
-        if (in_array($extension, ['xls', 'xlsx'])) {
+        if (in_array($extension, ['xls', 'xlsx', 'csv'])) {
 
             Excel::import(new QuestionImportStudentPractical, $file);
             //Default Excel Class 
@@ -112,14 +92,14 @@ class QuestionController extends Controller
 
     public function ViewQuestionTheory()
     {
-        $question = Question::where('type', 1)->get();
+        $question = Question::where('type',1)->get();
 
         return view('question.view_question_theory', compact('question'));
     }
 
     public function ViewQuestionPractical()
     {
-        $question = Question::where('type', 2)->get();
+        $question = Question::where('type',2)->get();
 
         return view('question.view_question_practical', compact('question'));
     }

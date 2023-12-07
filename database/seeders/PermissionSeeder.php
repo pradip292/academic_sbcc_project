@@ -17,6 +17,7 @@ class PermissionSeeder extends Seeder
     public function run()
     {
         $adminRole = Role::firstOrCreate(['name' => 'admin']);
+        $teacherRole = Role::firstOrCreate(['name' => 'teacher']);
 
         /*Add Permission Accoridng to Respected Module 
         First Create Varible like " $testPermission " give syntax like 
@@ -109,11 +110,33 @@ class PermissionSeeder extends Seeder
             Permission::firstOrCreate($item);
         }
         
+        $teacherPermissions = [
+            ['name' => 'view_question'],
+            ['name' => 'view_students'],
+
+            // Add more permissions related to teachers here
+        ];
+        // Fetch teacher users from the database
+        $teacherUsers = User::where('name', 'teacher')->get();
+
+// Assign the 'teacher' role to each teacher user
+        foreach ($teacherUsers as $teacherUser) {
+            $teacherUser->assignRole('teacher');
+        }
 
         
+        foreach ($teacherPermissions as $item) {
+            Permission::firstOrCreate($item);
+        }
+        $teacherRole->syncPermissions(Permission::whereIn('name', ['view_question', 'view_students'])->get());
+
+        // $teacherRole->givePermissionTo(self::add_students);
+
         $adminRole->syncPermissions(Permission::all());
         $user = User::where('email', 'admin@gmail.com')->first();
         $user->assignRole('admin');
+        
+        
     }
 
 }
