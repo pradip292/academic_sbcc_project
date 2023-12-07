@@ -14,8 +14,6 @@ class QuestionImportStudentPractical implements ToCollection
      */
     public function collection(Collection $rows)
     {
-        $type = 2;
-        
         foreach ($rows as $index => $row) {
             if ($index === 0) {
                 continue;
@@ -35,8 +33,7 @@ class QuestionImportStudentPractical implements ToCollection
                 'qoption2' => $row[2],
                 'qoption3' => $row[3],
                 'qoption4' => $row[4],
-                'type' => $type,
-                'term' => 1,
+                'type' => 2,
             ]);
         }
     }
