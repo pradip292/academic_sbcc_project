@@ -26,4 +26,9 @@ return new class extends Migration
     {
         Schema::dropIfExists('departments');
     }
+
+    public function years()
+    {
+        return $this->belongsToMany(Year::class, 'department_year_division');
+    }
 };

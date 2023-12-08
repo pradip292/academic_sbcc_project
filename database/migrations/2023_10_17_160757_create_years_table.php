@@ -24,4 +24,14 @@ return new class extends Migration
     {
         Schema::dropIfExists('years');
     }
+    ///testing
+    public function departments()
+    {
+        return $this->belongsToMany(Department::class, 'department_year_division');
+    }
+
+    public function divisions()
+    {
+        return $this->belongsToMany(Division::class, 'department_year_division');
+    }
 };

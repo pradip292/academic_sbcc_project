@@ -83,6 +83,14 @@ class DepartmentController extends Controller
                 
                     return redirect()->route('view-department')->with('success', 'Department deactivated successfully');
                 }
+
+
+                public function getData()
+                {
+                     $departments = Department::with('years.divisions')->get();
+
+                    return view('your.view', compact('departments'));
+                }
               
                 
 

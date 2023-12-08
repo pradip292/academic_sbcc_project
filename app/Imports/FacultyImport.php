@@ -50,7 +50,7 @@ class FacultyImport implements ToCollection
             }
 
             $user=User::create([
-                'name' => $row[0],
+                'name' => 'teacher',
                 'email'=> $row[2],
                 'password' => Hash::make('123456'),
                  'is_approved' => 1,
