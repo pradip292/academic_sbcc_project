@@ -282,7 +282,7 @@
                     </li>
                 @endcan
                
-                @can('add_teachers')
+                <!-- @can('add_teachers')
                     <li class="nav-item">
                         <a class="nav-link collapsed" data-bs-target="#teacher-nav" data-bs-toggle="collapse" href="#">
                             <i class="ri-account-circle-line"></i><span>Teacher</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -302,7 +302,7 @@
                             </li>
                         </ul>
                     </li>
-                @endcan
+                @endcan -->
         
                 @can('see_faculty')
                 <li class="nav-item">
