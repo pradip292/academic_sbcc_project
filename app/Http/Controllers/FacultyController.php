@@ -40,7 +40,7 @@ class FacultyController extends Controller
                 ]);
             
                 User::create([
-                    'name' => $faculty->fname,
+                    'name' => 'teacher',
                     'email' => $faculty->fmail,
                     'password' => Hash::make('123456'),
                     'is_approved' => 1,

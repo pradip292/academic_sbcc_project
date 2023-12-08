@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Teachers</h2>
+    <h2>Subjects</h2>
     <!-- Search Form -->
     <form action="{{ route('teachers.search') }}" method="GET" class="form-inline mb-2">
         <input type="text" name="search" class="form-control mr-2" placeholder="Search Teacher"><br>

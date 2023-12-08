@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Teachers</h2>
+    <h2>Subjects</h2>
 
     <div class="d-flex justify-content-end mb-3">
         <form action="{{ route('teachers.search') }}" method="GET">
@@ -20,7 +20,8 @@
                 <th>Department</th>
                 <th>Year</th>
                 <th>Division</th>
-                <th>Teacher Name</th>
+                <th>Subject Name</th>
+                
             </tr>
         </thead>
         <tbody>
