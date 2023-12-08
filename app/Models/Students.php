@@ -11,6 +11,7 @@ class Students extends Model
     protected $fillable = [
         'sname',
         'sprn',
+        'sdob',
         'sdepart',
         'sclass',
         'sdiv',
