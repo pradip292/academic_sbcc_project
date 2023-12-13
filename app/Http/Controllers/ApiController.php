@@ -18,7 +18,7 @@ class ApiController extends Controller
       
 
        
-       $credentials = $request->only('prn', 'dob');
+        $credentials = $request->only('prn', 'dob');
         $student = Students::where('sprn', $credentials['prn'])
             ->where('sdob', $credentials['dob'])
             ->first();
@@ -31,12 +31,7 @@ class ApiController extends Controller
         {
             return response()->json(['authenticated' => $student]);
 
-        }
-
-
-        
-
-       
+        } 
        
     }
 
