@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('sdiv')->nullable();
             $table->string('semail')->nullable();
             $table->string('sroll')->nullable();
-            $table->string('sdob')->nullable();
+           
             $table->integer('type');
             $table->timestamps();
 

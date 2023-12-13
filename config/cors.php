@@ -15,20 +15,21 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+   'paths' => ['api/*'],
 
-    'allowed_methods' => ['POST','PUT','GET','DELETE'],
+'allowed_origins' => [
+    'http://localhost:5173',
+],
 
-    'allowed_origins' => ['http://localhost:5173/'],
+'allowed_methods' => ['*'],
 
-    'allowed_origins_patterns' => [],
+'allowed_headers' => ['*'],
 
-    'allowed_headers' => ['Accept','Authorization','Content-Type'],
+'exposed_headers' => [],
 
-    'exposed_headers' => [],
+'max_age' => 0,
 
-    'max_age' => 0,
+'supports_credentials' => false,
 
-    'supports_credentials' => false,
 
 ];
