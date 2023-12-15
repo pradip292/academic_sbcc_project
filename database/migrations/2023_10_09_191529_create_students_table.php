@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('semail')->nullable();
             $table->string('sroll')->nullable();
            
-            $table->integer('type');
+            $table->integer('type')->nullable();
             $table->timestamps();
 
         });

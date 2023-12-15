@@ -7,9 +7,7 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
+    
     public function run()
 
     {
@@ -17,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionSeeder::class);
         $this->call(YearsTableSeeder::class);
         $this->call(DepartmentsTableSeeder::class);
+        $this->call(StudentSeeder::class);
 
         // \App\Models\User::factory(10)->create();
 
