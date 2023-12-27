@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PracticalResponse extends Model
+class practicalresponse extends Model
 {
     use HasFactory;
      protected $fillable = [
         'prn',
         'roll',
         'name',
+        'sem',
         'department_name',
         'class',
         'div',

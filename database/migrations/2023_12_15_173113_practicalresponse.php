@@ -4,31 +4,31 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up()
     {
-        Schema::create('practicalresponse', function (Blueprint $table) {
+        Schema::create('practicalresponses', function (Blueprint $table) {
             $table->id();
             $table->string('prn');
-            $table->string('roll'); 
-            $table->string('name');
-            $table->string('department_name');
-            $table->string('class');
-            $table->string('div');
-            $table->string('subject');
-            $table->string('sub_teacher');
-            $table->integer('Q1');
-            $table->integer('Q2');
-            $table->integer('Q3');
-            $table->integer('Q4');
-            $table->integer('Q5');
-            $table->integer('Q6');
-            $table->integer('Q7');
-            $table->integer('Q8');
-            $table->integer('Q9');
-            $table->integer('Q10');
-            $table->integer('feedback-count');
+            $table->string('roll');
+            $table->string('name')->nullable();
+            $table->unsignedTinyInteger('sem')->nullable();
+            $table->string('department_name')->nullable();
+            $table->string('class')->nullable();
+            $table->string('div')->nullable();
+            $table->string('subject')->nullable();
+            $table->string('sub_teacher')->nullable();
+            $table->integer('Q1')->nullable();
+            $table->integer('Q2')->nullable();
+            $table->integer('Q3')->nullable();
+            $table->integer('Q4')->nullable();
+            $table->integer('Q5')->nullable();
+            $table->integer('Q6')->nullable();
+            $table->integer('Q7')->nullable();
+            $table->integer('Q8')->nullable();
+            $table->integer('Q9')->nullable();
+            $table->integer('Q10')->nullable();
+            $table->integer('feedback_count')->nullable();
             $table->timestamps();
         });
     }

@@ -31,7 +31,9 @@ Route::post('view-practical-question', [QuestionController::class,'ViewQuestionP
 
 Route::post('login-student',[ApiController::class,'StudentLogin'])->name('sign_in');
 
-Route::get('questions',[ApiController::class,'SendQuestions'])->name('questions');
+Route::get('questions',[ApiController::class,'responseWithAllQuestion'])->name('questions');
+
+Route::post('response',[ApiController::class,'storeResponse'])->name('response');
 
 
 });
