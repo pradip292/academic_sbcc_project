@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
             $table->string('dept_name');
+            $table->string('dept_hod');
             $table->boolean('deactivated')->default(1);
             $table->timestamps();
             
